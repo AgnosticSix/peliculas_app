@@ -19,6 +19,9 @@ class MovieSlider extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(
+            height: 5,
+          ),
           Expanded(
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -32,6 +35,7 @@ class MovieSlider extends StatelessWidget {
 }
 
 class _MoviePoster extends StatelessWidget {
+  final int index = 1;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -39,12 +43,28 @@ class _MoviePoster extends StatelessWidget {
       height: 190,
       margin: const EdgeInsets.symmetric(horizontal: 10),
       child: Column(
-        children: const [
-          FadeInImage(
-            placeholder: AssetImage('assets/loading.gif'),
-            image: NetworkImage('https://via.placeholder.com/300x400'),
-            fit: BoxFit.cover,
+        children: [
+          GestureDetector(
+            onTap: () => Navigator.pushNamed(context, 'details',
+                arguments: 'movie-instance'),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: const FadeInImage(
+                placeholder: AssetImage('assets/loading.gif'),
+                image: NetworkImage('https://via.placeholder.com/300x400'),
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
+          const SizedBox(
+            height: 5,
+          ),
+          const Text(
+            'Star Wars',
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.center,
+          )
         ],
       ),
     );
