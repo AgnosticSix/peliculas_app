@@ -125,7 +125,7 @@ class _Overview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
       child: Text(
         'Minim qui exercitation labore labore. Laborum duis do ex in dolor exercitation ut culpa occaecat consectetur labore occaecat quis sit. Consequat fugiat excepteur Lorem officia officia nisi exercitation cillum velit ullamco excepteur dolor. Do ipsum aliquip mollit ad.',
         textAlign: TextAlign.justify,
