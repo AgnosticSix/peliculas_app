@@ -23,19 +23,10 @@ class DetailsScreen extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            _Overview(movie),
             const SizedBox(
               height: 50,
             ),
-            _Overview(movie),
-            const SizedBox(
-              height: 50,
-            ),
-            _Overview(movie),
-            const SizedBox(
-              height: 50,
-            ),
-            CastingCards(),
+            CastingCards(movie.id),
           ]),
         )
       ],
@@ -88,7 +79,7 @@ class _PosterAndTitle extends StatelessWidget {
     return Container(
       width: double.infinity,
       margin: const EdgeInsets.only(top: 20),
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 25),
       child: Row(
         children: [
           ClipRRect(
@@ -150,7 +141,7 @@ class _Overview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
       child: Text(
         movie.overview,
         textAlign: TextAlign.justify,
